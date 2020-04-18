@@ -1,7 +1,9 @@
 const Todo = require('../data/todos');
 
 const index = (req, res, next) => {
-    res.render('/', {todos: Todo.getAll() })
+    res.render('index', {
+        title: 'Todo List',
+        todos: Todo.getAll() })
 }
 
 // const show = (req, res) => {
@@ -11,8 +13,8 @@ const index = (req, res, next) => {
 // }
 
 const create = (req, res) => {
-    console.log(req.body);
-    todos.push(todo);
+    console.log(req.body.todos);
+    todos.push(todos);
     req.body.done = false;
     Todo.create(req.body);
     res.render('/')
