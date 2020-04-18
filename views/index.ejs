@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <ul>
+      <% if (todos.length !== 0) { %>
+        <% todos.forEach(function(t) { %>
+            <li>
+                <form action="/<%= idx %>?_method=DELETE"
+                    class="delete-form" method="POST">
+                    <button type="submit">DELETE</button>
+                </form>
+                <%= t.todos %>
+                -
+                <%= t.done ? 'done' : 'not done' %>
+            </li>
+        <% }); %>
+      <% } else { %>
+        <h3>There are no To Dos yet!</h3>
+        <% } %>
+    </ul>
+
+    <div class="card-action">
+      <form action="/todos" method="POST">
+        
+        <button type="submit">Add To Do</button>
+      </form>
+    </div>
+
+
+  </body>
+</html>
