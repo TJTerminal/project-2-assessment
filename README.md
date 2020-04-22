@@ -2,4 +2,4 @@
 project-2-assessment
 
 # Heroku:
-https://dashboard.heroku.com/apps/fathomless-ridge-63532
+https://fathomless-ridge-63532.herokuapp.com
