@@ -6,25 +6,22 @@ const index = (req, res, next) => {
         todos: Todo.getAll() })
 }
 
-// const show = (req, res) => {
-//     res.render('/', {
-//         todo: Todo.getOne(req.params.id)
-//     })
-// }
-
 const create = (req, res) => {
     console.log(req.body.todos);
-    todos.push(todos);
-    req.body.done = false;
-    Todo.create(req.body);
-    res.render('/')
+    Todo.getAll().push(req.body)
+    res.render('index', {
+        title: 'Todo List',
+        todos: Todo.getAll() })
 }
 
 const deleteTodo = (req, res) => {
-    todos.splice(id, 1);
-    Todo.deleteTodo(req.params.id);
-    res.render('/')
+    Todo.getAll().splice(req.params.id, 1);
+    res.render('index', {
+        title: 'Todo List',
+        todos: Todo.getAll() })
 }
+
+
 
 module.exports = {
     index,

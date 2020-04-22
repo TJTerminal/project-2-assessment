@@ -1,5 +1,5 @@
 const todos = [
-    {todo: 'Example To Do', done: false }
+    // {todo: 'Example To Do', done: false }
 ];
 
 const getAll = () => {
